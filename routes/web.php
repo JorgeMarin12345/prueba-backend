@@ -11,6 +11,22 @@
 |
 */
 
+Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::resource('productos', 'ProductoController',['except' => ['show']]);
+    Route::get('/home', 'HomeController@index')->name('home');
+});
+
+Route::get('/documentos/{filename}', function ($filename){
+    $path = storage_path('app').'/'.$filename;
+    if(!File::exists($path)) abort(404);
+    $file = File::get($path);
+    $type = File::mimeType($path);
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+    return $response;
+})->name('documento');
