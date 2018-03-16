@@ -114,4 +114,9 @@ class ProductoController extends Controller
         $producto->delete();
         return redirect()->route('productos.index')->with('success','Accesorio eliminado con éxito.');
     }
+
+    public function apiproducto(){
+        $productos = Producto::orderBy('id')->with('categoria')->get();
+        return view('productos.grid',["productos"=>$productos]);
+    }
 }

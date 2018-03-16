@@ -3,9 +3,9 @@
       @foreach($docs as $doc)
           @if ($doc->imagen)
               <div class="col-md-4">
-                  <a >
+                  <a href="{{route('documento',$doc->ruta)}}" target="blank">
                   <div class="thumbnail">
-                      <img src="{{route('documento',$doc->ruta)}}" style="max-height:200px;">
+                      <img src="{{route('documento',$doc->ruta)}}" style="max-height:150px;">
                       <div class="caption">
                         <p>&nbsp;</p>
                       </div>
