@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <a href="{{route('list-productos')}}">Ver/editar accesorios</a>
                 </div>
             </div>
         </div>
