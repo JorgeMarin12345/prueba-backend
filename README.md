@@ -12,6 +12,8 @@
   ```php artisan migrate```  
   ```php artisan db:seed```  
   ```composer install```  
+  ```npm install```  
+  ```npm run dev```  
  
  
 Notas del proyecto:
