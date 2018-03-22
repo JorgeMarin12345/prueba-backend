@@ -18,7 +18,7 @@ class CreateProductosTable extends Migration
             $table->longText('descripcion');
             $table->string('pais_origen');
             $table->string('fabricante');
-            $table->integer('categoria_id');
+            $table->integer('categoria_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

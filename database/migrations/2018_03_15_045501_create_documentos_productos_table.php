@@ -15,7 +15,7 @@ class CreateDocumentosProductosTable extends Migration
     {
         Schema::create('documentos_productos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('producto_id');
+            $table->integer('producto_id')->unsigned();
             $table->boolean('imagen');
             $table->string('ruta');
             $table->timestamps();
